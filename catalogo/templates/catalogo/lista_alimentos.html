@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Catálogo de Alimentos</title>
+</head>
+<body>
+    <h2>Catálogo de Alimentos</h2>
+    <table border="1">
+        <tr>
+            <th>Nombre</th>
+            <th>Energía (kcal)</th>
+            <th>Proteínas (g)</th>
+            <th>Precio (x 100g)</th>
+        </tr>
+        {% for alimento in alimentos %}
+        <tr>
+            <td>{{ alimento.nombre }}</td>
+            <td>{{ alimento.energia_kcal }}</td>
+            <td>{{ alimento.proteinas_g }}</td>
+            <td>S/ {{ alimento.precio_unitario }}</td>
+        </tr>
+        {% empty %}
+        <tr>
+            <td colspan="4">No hay alimentos registrados todavía.</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
